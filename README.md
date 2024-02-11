@@ -1,2 +1,0 @@
-# PulsarCompanion
- Your little helper
