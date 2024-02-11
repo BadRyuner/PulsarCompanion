@@ -35,7 +35,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="Main" type="Tabs" parent="Tabs"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 40.0
@@ -881,7 +880,7 @@ custom_icons/grabber = ExtResource( 15 )
 custom_styles/slider = SubResource( 1 )
 max_value = 1.0
 step = 0.04
-value = 0.25
+value = 0.24
 
 [node name="TotBar" type="TextureProgress" parent="Tabs/Engineering/ScreenBase"]
 margin_left = 152.0
@@ -909,7 +908,7 @@ custom_icons/grabber = ExtResource( 15 )
 custom_styles/slider = SubResource( 1 )
 max_value = 1.0
 step = 0.04
-value = 0.25
+value = 0.24
 
 [node name="WeaBar" type="TextureProgress" parent="Tabs/Engineering/ScreenBase"]
 margin_left = 152.0
@@ -937,7 +936,7 @@ custom_icons/grabber = ExtResource( 15 )
 custom_styles/slider = SubResource( 1 )
 max_value = 1.0
 step = 0.04
-value = 0.25
+value = 0.24
 
 [node name="ShiBar" type="TextureProgress" parent="Tabs/Engineering/ScreenBase"]
 margin_left = 152.0
@@ -965,7 +964,7 @@ custom_icons/grabber = ExtResource( 15 )
 custom_styles/slider = SubResource( 1 )
 max_value = 1.0
 step = 0.04
-value = 0.25
+value = 0.24
 
 [node name="SciBar" type="TextureProgress" parent="Tabs/Engineering/ScreenBase"]
 margin_left = 152.0
@@ -993,7 +992,7 @@ custom_icons/grabber = ExtResource( 15 )
 custom_styles/slider = SubResource( 1 )
 max_value = 1.0
 step = 0.04
-value = 0.25
+value = 0.24
 
 [node name="slashyslash" type="Label" parent="Tabs/Engineering/ScreenBase"]
 margin_left = 16.0
@@ -1005,6 +1004,7 @@ text = "%"
 align = 2
 
 [node name="Logs" type="Tabs" parent="Tabs"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 40.0
@@ -1040,7 +1040,6 @@ rect_min_size = Vector2( 599, 0 )
 bbcode_enabled = true
 
 [node name="Connection" type="Control" parent="."]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 
@@ -1070,6 +1069,19 @@ margin_right = 905.0
 margin_bottom = 383.0
 text = "Connect"
 
+[node name="FullscreenButton" type="TextureButton" parent="."]
+margin_left = 904.0
+margin_right = 1024.0
+margin_bottom = 56.0
+expand = true
+
+[node name="Label" type="Label" parent="FullscreenButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "Toggle
+Fullscreen"
+align = 1
+
 [connection signal="tab_changed" from="Tabs" to="." method="_on_tab_changed"]
 [connection signal="toggled" from="Tabs/Engineering/ScreenBase/OC" to="." method="_on_OC_toggled"]
 [connection signal="value_changed" from="Tabs/Engineering/ScreenBase/EngBar/Slider" to="." method="_on_EngSlider_value_changed"]
@@ -1078,3 +1090,4 @@ text = "Connect"
 [connection signal="value_changed" from="Tabs/Engineering/ScreenBase/ShiBar/Slider" to="." method="_on_ShiSlider_value_changed"]
 [connection signal="value_changed" from="Tabs/Engineering/ScreenBase/SciBar/Slider" to="." method="_on_SciSlider_value_changed"]
 [connection signal="button_down" from="Connection/ConnectButton" to="." method="_on_ConnectButton_button_down"]
+[connection signal="pressed" from="FullscreenButton" to="." method="_on_FullscreenButton_pressed"]

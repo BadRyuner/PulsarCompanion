@@ -61,6 +61,9 @@ func _ws_data():
 
 #func name(packet: StreamPeerBuffer) -> void:
 
+func _on_FullscreenButton_pressed():
+	OS.window_fullscreen = !OS.window_fullscreen
+
 onready var MyShipName = get_node("Tabs/Main/ScreenBase/UP/LSN");
 onready var EnemyShipName = get_node("Tabs/Main/ScreenBase/DOWN/LSN");
 onready var MyEHP = get_node("Tabs/Main/ScreenBase/UP/EHPBar");
