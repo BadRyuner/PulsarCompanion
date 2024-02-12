@@ -424,7 +424,8 @@ func _on_tab_changed(tab: int) -> void:
 
 
 func _on_OC_toggled(button_pressed):
-	send_opcode(101)
+	if !reading_packet:
+		send_opcode(101)
 
 func _on_EngSlider_value_changed(value):
 	if !reading_packet:
